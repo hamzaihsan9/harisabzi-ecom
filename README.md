@@ -1,58 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌿 HariSabzi E-Commerce (GreenHarvest Bazaar — سبزی پودھ مارکیٹ)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **A vibrant, stylish e-commerce marketplace built strictly with Laravel 11 & PHP for buying living vegetation and grocery plants (carrot plants, kitchen herbs, fruiting vegetables, and root crops).**
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌟 Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**HariSabzi E-Commerce** is a full-featured online marketplace dedicated to urban home growers, balcony gardeners, and kitchen farmers in Pakistan. It allows customers to order live, potted vegetable plants and grocery seedlings ready for harvest, delivered fresh to their doorstep.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🥕 **Specialized Vegetation Focus**: Features live edible plants including **Nantes Orange & Kuroda Purple Carrot Plants**, Desi Mooli (Radish), Beetroot, Ginger, Podina (Mint), Coriander, Cherry Tomatoes, Green Chilies, and Kagzi Lemon.
+- 🎨 **Cosmic Bold Aesthetics**: High-energy typography powered by Google Fonts `Fredoka` & `Outfit` (weights 700–900) for a playful yet premium visual impact.
+- 🍃 **Botanical Green Glow**: Emerald green palette (`#052e16`, `#166534`, `#22c55e`, `#84cc16`), mint accents, glassmorphic plant cards, and an oversized brand logo.
+- 🇵🇰 **Pakistan-Centric E-Commerce**: All prices formatted in **PKR (₨)**, with localized delivery options and support for **Cash on Delivery (COD)**, **JazzCash / EasyPaisa**, and **Direct Bank Transfer**.
+- 🚫 **100% Traditional Tech Stack**: Strictly Laravel & PHP MVC without bloated AI dependencies or third-party SaaS lock-in.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Key Features
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Living Plant Catalog**: Browse by categories (*Carrots & Root Veggies, Kitchen Herbs & Spices, Fruiting Vegetables, Leafy Greens, Dwarf Fruits & Berries*).
+- **Interactive Filtering & Search**: Real-time search by plant name, category tabs, and interactive PKR price-range slider (`₨ 250` - `₨ 1,200`).
+- **Horticultural Care Specifications**: Each listing provides sunlight needs, watering frequency, pot sizing, harvest timeline, and difficulty level.
+- **Quick-View Modal**: Instant previews of plant specifications and photos without leaving the catalog.
+- **Slide-Out Drawer Cart**: Session-backed interactive basket with dynamic counter badges, item quantity controls, and subtotal calculation.
+- **Pakistani Multi-Step Checkout**: Province, city, shipping address, delivery instructions, and payment method selector.
+- **Order Invoice & Live Tracker**: Immediate receipt generation with unique tracking IDs (`GH-XXXX-XXXX`) and nursery packaging stage tracker.
+- **Community Grower Onboarding**: Interactive seller registration modal for local nursery partners to list home-grown seedlings.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🛠️ Tech Stack
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- **Backend**: PHP 8.4+, Laravel 11 (MVC architecture, Eloquent ORM, Session Manager, Custom Service Providers)
+- **Database**: SQLite (Zero-config, fast local persistence)
+- **Frontend / Templating**: Laravel Blade, Vanilla Modern JavaScript (ES6+), CSS3 Flexbox/Grid, Glassmorphic UI
+- **Typography**: Google Fonts Fredoka & Outfit (Cosmic Bold 700-900)
+- **Currency**: Pakistani Rupee (₨ PKR)
 
-```bash
-composer require laravel/boost --dev
+---
 
-php artisan boost:install
+## 📂 Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── PlantController.php     # Catalog browsing, filtering, search, quick-view API
+│   │   ├── CartController.php      # Session-based cart drawer management
+│   │   ├── OrderController.php     # Checkout, invoice calculation, and order tracking
+│   │   └── SellerController.php    # Community nursery onboarding
+│   └── Models/
+│       ├── Category.php            # Plant taxonomy
+│       ├── Plant.php               # Vegetable listings and horticultural specs
+│       ├── Order.php               # Customer orders in PKR
+│       ├── OrderItem.php           # Order line items
+│       └── SellerListing.php       # Community vendor applications
+├── database/
+│   ├── migrations/                 # Relational schema migrations
+│   └── seeders/
+│       └── PlantMarketSeeder.php   # 17 vegetable/grocery plants with verified photos
+├── resources/
+│   └── views/
+│       ├── layouts/app.blade.php   # Cosmic bold theme, big logo header, cart drawer
+│       └── marketplace/
+│           ├── index.blade.php     # Hero spotlight, carrot feature, and product grid
+│           ├── show.blade.php      # Detailed care guide & horticultural specs
+│           ├── cart.blade.php      # Dedicated basket view
+│           ├── checkout.blade.php  # Pakistani shipping & payment options
+│           └── confirmation.blade.php # Order invoice & dispatch tracker
+├── routes/
+│   └── web.php                     # Clean RESTful route mappings
+└── server.php                      # Local standalone dev runner
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 💻 Installation & Setup
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the repository**:
+   ```bash
+   git clone git@github.com:hamzaihsan9/harisabzi-ecom.git
+   cd harisabzi-ecom
+   ```
 
-## Code of Conduct
+2. **Install PHP Dependencies**:
+   ```bash
+   composer install
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Configure Environment**:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+4. **Initialize Database & Seed Vegetation Catalog**:
+   ```bash
+   touch database/database.sqlite
+   php artisan migrate --seed --seeder=PlantMarketSeeder
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Start Local Development Server**:
+   ```bash
+   php artisan serve
+   # Or using the built-in standalone runner:
+   php -S 0.0.0.0:8080 server.php
+   ```
 
-## License
+6. Open your browser and navigate to `http://localhost:8080`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 📜 License
+This project is open-source under the [MIT License](LICENSE).
