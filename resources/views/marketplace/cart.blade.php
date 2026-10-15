@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Your Plant Basket — Hari Sabzi')
+@section('title', 'Cart | Hari Sabzi')
 
 @section('content')
 
@@ -25,16 +25,16 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <!-- Left: Items Table -->
-                <div class="lg:col-span-8 bg-white rounded-3xl border-2 border-botanical-100 shadow-sm p-6 space-y-4">
-                    <div class="divide-y divide-botanical-100">
+                <div class="lg:col-span-8 bg-white rounded-3xl shadow-sm p-6 sm:p-8 space-y-4">
+                    <div class="divide-y divide-emerald-50">
                         @foreach($cart as $id => $item)
                             <div class="py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                 <div class="flex items-center gap-4">
-                                    <img src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}" class="w-20 h-20 rounded-2xl object-cover border-2 border-botanical-300">
+                                    <img src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}" class="w-20 h-20 rounded-2xl object-cover shadow-sm">
                                     <div>
                                         <h3 class="font-black text-base text-botanical-950">{{ $item['name'] }}</h3>
                                         <p class="text-xs font-bold text-botanical-600">{{ $item['urdu_name'] }}</p>
-                                        <span class="text-xs font-bold bg-botanical-100 text-botanical-800 px-2.5 py-0.5 rounded-full inline-block mt-1">
+                                        <span class="text-xs font-bold bg-emerald-100/70 text-botanical-900 px-3 py-1 rounded-full inline-block mt-1">
                                             🪴 {{ $item['pot_size'] }}
                                         </span>
                                     </div>
@@ -42,12 +42,12 @@
 
                                 <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
                                     <!-- Qty -->
-                                    <form action="{{ route('cart.update') }}" method="POST" class="flex items-center border border-botanical-300 rounded-xl bg-botanical-50 shadow-sm">
+                                    <form action="{{ route('cart.update') }}" method="POST" class="flex items-center rounded-2xl bg-emerald-50 shadow-sm p-1">
                                         @csrf
                                         <input type="hidden" name="plant_id" value="{{ $id }}">
-                                        <button type="submit" name="quantity" value="{{ $item['quantity'] - 1 }}" class="px-3 py-1 font-black text-botanical-800 hover:bg-botanical-200 rounded-l-xl">-</button>
+                                        <button type="submit" name="quantity" value="{{ $item['quantity'] - 1 }}" class="px-3 py-1 font-black text-botanical-800 hover:bg-white rounded-xl">-</button>
                                         <span class="px-3 py-1 text-xs font-black">{{ $item['quantity'] }}</span>
-                                        <button type="submit" name="quantity" value="{{ $item['quantity'] + 1 }}" class="px-3 py-1 font-black text-botanical-800 hover:bg-botanical-200 rounded-r-xl">+</button>
+                                        <button type="submit" name="quantity" value="{{ $item['quantity'] + 1 }}" class="px-3 py-1 font-black text-botanical-800 hover:bg-white rounded-xl">+</button>
                                     </form>
 
                                     <!-- Subtotal -->
@@ -70,10 +70,10 @@
                 </div>
 
                 <!-- Right: Summary Card -->
-                <div class="lg:col-span-4 bg-white rounded-3xl border-2 border-botanical-200 shadow-xl p-6 space-y-4">
-                    <h3 class="text-lg font-black text-botanical-950 pb-3 border-b border-botanical-100">Price Breakdown</h3>
+                <div class="lg:col-span-4 bg-white rounded-3xl shadow-sm p-6 sm:p-8 space-y-4">
+                    <h3 class="text-lg font-black text-botanical-950 pb-3 border-b border-emerald-50">Price Breakdown</h3>
                     
-                    <div class="space-y-2 text-xs font-bold">
+                    <div class="space-y-2.5 text-xs font-bold">
                         <div class="flex justify-between text-botanical-700">
                             <span>Subtotal:</span>
                             <span class="font-black">₨ {{ number_format($subtotal) }} PKR</span>
@@ -82,14 +82,14 @@
                             <span>Delivery:</span>
                             <span class="font-black">₨ {{ number_format($shipping) }} PKR</span>
                         </div>
-                        <div class="flex justify-between text-base font-black text-botanical-950 border-t border-botanical-200 pt-3">
+                        <div class="flex justify-between text-base font-black text-botanical-950 border-t border-emerald-100 pt-3">
                             <span>Total Payable:</span>
                             <span class="text-xl text-botanical-700 font-black">₨ {{ number_format($total) }} PKR</span>
                         </div>
                     </div>
 
                     <a href="{{ route('checkout.index') }}" 
-                       class="w-full bg-gradient-to-r from-botanical-600 to-botanical-800 hover:from-botanical-700 hover:to-botanical-900 text-white font-black py-4 px-6 rounded-2xl shadow-xl flex items-center justify-center gap-2 text-sm mt-4">
+                       class="w-full bg-gradient-to-r from-botanical-600 to-botanical-800 hover:from-botanical-700 hover:to-botanical-900 text-white font-black py-4 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-2 text-sm mt-4">
                         <span>Proceed to Checkout</span>
                         <span>➔</span>
                     </a>
@@ -97,7 +97,7 @@
 
             </div>
         @else
-            <div class="bg-white rounded-3xl p-16 text-center border-2 border-botanical-200 shadow-sm max-w-lg mx-auto">
+            <div class="bg-white rounded-3xl p-16 text-center shadow-sm max-w-lg mx-auto">
                 <span class="text-6xl block mb-3">🪴</span>
                 <h3 class="text-2xl font-black text-botanical-950">Your Basket is Empty</h3>
                 <p class="text-xs font-bold text-botanical-600 mt-2 mb-6">Choose from carrot plants, cherry tomatoes, and fresh herbs to get started!</p>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $plant->name . ' — Buy Potted Plant in Pakistan | Hari Sabzi')
+@section('title', $plant->name . ' | Hari Sabzi')
 
 @section('content')
 
@@ -24,12 +24,12 @@
             
             <!-- Left Column: HD Image & Badges -->
             <div class="lg:col-span-6 space-y-4">
-                <div class="relative overflow-hidden rounded-3xl border-4 border-botanical-200 bg-botanical-50 shadow-xl group">
+                <div class="relative overflow-hidden rounded-3xl bg-emerald-50 shadow-xl group">
                     <img referrerpolicy="no-referrer" src="{{ $plant->image_url }}" alt="{{ $plant->name }}" 
                          class="w-full h-[450px] sm:h-[520px] object-cover group-hover:scale-105 transition-transform duration-500">
                     
                     @if($plant->badge)
-                        <div class="absolute top-4 left-4 bg-botanical-800 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-lg border border-emeraldGlow/40">
+                        <div class="absolute top-4 left-4 bg-botanical-800 text-white font-black text-xs px-3.5 py-1.5 rounded-full shadow-lg">
                             {{ $plant->badge }}
                         </div>
                     @endif
@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- Trust Guarantee Bar -->
-                <div class="grid grid-cols-3 gap-3 text-center bg-botanical-50 p-4 rounded-2xl border border-botanical-200">
+                <div class="grid grid-cols-3 gap-3 text-center bg-emerald-50/70 p-4 rounded-2xl">
                     <div>
                         <span class="text-xl">🪴</span>
                         <h4 class="text-xs font-black text-botanical-900 mt-1">In-Pot Delivery</h4>
@@ -67,7 +67,7 @@
                 <!-- Category & City -->
                 <div class="flex items-center justify-between">
                     <a href="{{ route('marketplace.index', ['category' => $plant->category->slug]) }}" 
-                       class="bg-botanical-100 hover:bg-botanical-200 text-botanical-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider transition-colors">
+                       class="bg-emerald-100/80 hover:bg-emerald-200 text-botanical-900 text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider transition-colors">
                         {{ $plant->category->name }}
                     </a>
                     <span class="text-xs font-bold text-botanical-500">📍 Dispatched from {{ $plant->origin_city }}</span>
@@ -96,7 +96,7 @@
                 </div>
 
                 <!-- Price Section in PKR -->
-                <div class="bg-botanical-50 p-5 rounded-2xl border-2 border-botanical-200">
+                <div class="bg-emerald-50/80 p-6 rounded-3xl">
                     <div class="flex items-baseline gap-3">
                         <span class="text-3xl sm:text-4xl font-black text-botanical-950">
                             {{ $plant->formatted_price }}
@@ -105,12 +105,12 @@
                             <span class="text-lg text-gray-400 line-through font-bold">
                                 {{ $plant->formatted_original_price }}
                             </span>
-                            <span class="bg-carrot-500 text-white text-xs font-black px-2.5 py-0.5 rounded-full">
+                            <span class="bg-carrot-500 text-white text-xs font-black px-3 py-1 rounded-full">
                                 Save ₨ {{ number_format($plant->original_price_pkr - $plant->price_pkr) }} PKR
                             </span>
                         @endif
                     </div>
-                    <p class="text-xs font-bold text-botanical-600 mt-1">
+                    <p class="text-xs font-bold text-botanical-600 mt-1.5">
                         Tax included. Flat ₨ 200 delivery nationwide across Pakistan. Cash on Delivery accepted.
                     </p>
                 </div>
@@ -124,28 +124,28 @@
                 </div>
 
                 <!-- Horticultural Specs Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 bg-white p-4 rounded-2xl border-2 border-botanical-100 shadow-sm text-xs font-bold">
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 bg-emerald-50/50 p-4 rounded-3xl text-xs font-bold">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Container / Pot</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">🪴 {{ $plant->pot_size }}</span>
                     </div>
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Sunlight Needed</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">☀️ {{ $plant->sunlight }}</span>
                     </div>
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Watering Schedule</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">💧 {{ $plant->watering }}</span>
                     </div>
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Harvest Timeline</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">⏱️ {{ $plant->harvest_time }}</span>
                     </div>
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Growth Stage</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">🌱 {{ $plant->growth_stage }}</span>
                     </div>
-                    <div class="p-2.5 bg-botanical-50/70 rounded-xl">
+                    <div class="p-3 bg-white rounded-2xl shadow-sm">
                         <span class="text-botanical-500 block text-[10px] uppercase font-black">Skill Level</span>
                         <span class="text-botanical-900 font-extrabold mt-0.5 block">⭐ {{ $plant->difficulty }}</span>
                     </div>
@@ -157,7 +157,7 @@
                     <input type="hidden" name="plant_id" value="{{ $plant->id }}">
                     
                     <div class="flex items-center gap-4">
-                        <div class="flex items-center bg-botanical-100 rounded-2xl border-2 border-botanical-300 p-1">
+                        <div class="flex items-center bg-emerald-50 rounded-2xl p-1 shadow-sm">
                             <button type="button" onclick="decrementDetailQty()" class="w-10 h-10 flex items-center justify-center font-black text-botanical-900 hover:bg-white rounded-xl text-lg">-</button>
                             <input type="number" id="detail-qty" name="quantity" value="1" min="1" max="50" class="w-14 text-center bg-transparent font-black text-base focus:outline-none">
                             <button type="button" onclick="incrementDetailQty()" class="w-10 h-10 flex items-center justify-center font-black text-botanical-900 hover:bg-white rounded-xl text-lg">+</button>
@@ -176,7 +176,7 @@
 
         <!-- RELATED PLANTS SECTION -->
         @if($relatedPlants->count() > 0)
-            <div class="mt-20 pt-12 border-t-2 border-botanical-100">
+            <div class="mt-20 pt-12 border-t border-emerald-100">
                 <div class="flex justify-between items-center mb-8">
                     <div>
                         <h2 class="text-2xl font-black text-botanical-950">More from {{ $plant->category->name }}</h2>
@@ -189,7 +189,7 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach($relatedPlants as $rel)
-                        <div class="bg-white rounded-3xl overflow-hidden border-2 border-botanical-100 shadow-sm hover:shadow-lg plant-card-hover p-4 flex flex-col justify-between">
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg plant-card-hover p-4 flex flex-col justify-between">
                             <div class="h-44 rounded-2xl overflow-hidden mb-3">
                                 <img referrerpolicy="no-referrer" src="{{ $rel->image_url }}" alt="{{ $rel->name }}" class="w-full h-full object-cover">
                             </div>
@@ -200,7 +200,7 @@
                                 <p class="text-xs font-bold text-botanical-600">{{ $rel->urdu_name }}</p>
                                 <span class="text-sm font-black text-botanical-900 block mt-2">{{ $rel->formatted_price }}</span>
                             </div>
-                            <a href="{{ route('plants.show', $rel->slug) }}" class="mt-3 block text-center bg-botanical-100 hover:bg-botanical-200 text-botanical-800 text-xs font-black py-2 rounded-xl transition-colors">
+                            <a href="{{ route('plants.show', $rel->slug) }}" class="mt-3 block text-center bg-emerald-50 hover:bg-emerald-100 text-botanical-900 text-xs font-black py-2.5 rounded-xl transition-colors">
                                 View Plant Details
                             </a>
                         </div>

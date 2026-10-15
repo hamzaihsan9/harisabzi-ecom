@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Hari Sabzi — Organic Living Plant & Grocery Marketplace')</title>
+    <title>@yield('title', 'Hari Sabzi')</title>
 
     <!-- Cosmic Bold Typography: Fredoka & Outfit Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,37 +114,40 @@
         </div>
     </aside>
 
-    <!-- Main Navigation Bar with BIGGER LOGO -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-botanical-100 shadow-sm transition-all">
+    <!-- Main Navigation Bar with Round Logo & Merged Styling -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 
-                <!-- BIGGER BRAND LOGO -->
+                <!-- ROUND BRAND LOGO -->
                 <a href="{{ route('marketplace.index') }}" class="flex items-center gap-3.5 group">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr from-botanical-700 via-botanical-600 to-emeraldGlow flex items-center justify-center shadow-lg shadow-botanical-600/30 group-hover:scale-105 transition-transform duration-300 ring-4 ring-botanical-100">
-                        <!-- Custom Big Botanical & Carrot Plant SVG Logo -->
-                        <svg class="w-9 h-9 sm:w-10 sm:h-10 text-white fill-current filter drop-shadow" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-600 via-botanical-700 to-botanical-950 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-emerald-200" viewBox="0 0 36 36" fill="none">
+                            <circle cx="18" cy="18" r="15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
+                            <path d="M9 25.5C13 23 23 23 27 25.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 25V13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M18 19C13.5 18 10 13 12 9C16 10 18 14.5 18 19Z" fill="currentColor"/>
+                            <path d="M18 16C22.5 15 25.5 10 24 6C20 7 18 11.5 18 16Z" fill="#86efac"/>
                         </svg>
                     </div>
                     <div class="flex flex-col">
-                        <div class="flex items-center gap-1.5">
+                        <div class="flex items-center gap-2">
                             <span class="text-2xl sm:text-3xl font-black text-botanical-950 tracking-tight group-hover:text-botanical-700 transition-colors">
                                 HARI<span class="text-botanical-600"> SABZI</span>
                             </span>
-                            <span class="bg-carrot-500 text-white text-[10px] uppercase font-black px-1.5 py-0.5 rounded-md shadow-sm">مارکیٹ</span>
+                            <span class="bg-carrot-500 text-white text-[10px] uppercase font-black px-2 py-0.5 rounded-full shadow-sm">مارکیٹ</span>
                         </div>
                         <span class="text-xs sm:text-sm font-extrabold text-botanical-600 tracking-wide flex items-center gap-1">
-                            🌱 ہری سبزی • Potted Grocery & Vegetables
+                            🌱 پودھ اور سبزی مارکیٹ • Living Grocery Plants
                         </span>
                     </div>
                 </a>
 
-                <!-- Desktop Search Bar -->
+                <!-- Desktop Search Bar: Borderless Merged Input -->
                 <div class="hidden lg:flex items-center flex-1 max-w-md mx-8">
                     <form action="{{ route('marketplace.index') }}" method="GET" class="w-full relative">
                         <input type="text" name="q" value="{{ request('q') }}" placeholder="Search carrot plants, mint, tomatoes, herbs..." 
-                               class="w-full pl-12 pr-4 py-3 bg-botanical-50/80 hover:bg-white focus:bg-white text-botanical-950 placeholder-botanical-400 rounded-full border-2 border-botanical-200 focus:border-botanical-500 focus:outline-none focus:ring-4 focus:ring-botanical-200/50 transition-all text-sm font-bold shadow-inner">
+                               class="w-full pl-12 pr-4 py-3 bg-emerald-50/70 hover:bg-emerald-50 focus:bg-white text-botanical-950 placeholder-botanical-400 rounded-full focus:outline-none focus:ring-2 focus:ring-botanical-400 transition-all text-sm font-bold shadow-sm">
                         <div class="absolute left-4 top-3.5 text-botanical-500">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                         </div>
@@ -154,14 +157,7 @@
                 <!-- Navigation Action Buttons -->
                 <div class="flex items-center gap-3">
                     
-                    <!-- Sell Plants Button -->
-                    <button onclick="openSellerModal()" 
-                            class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-carrot-500 to-amber-500 hover:from-carrot-600 hover:to-amber-600 text-white px-4 py-2.5 rounded-xl text-sm font-extrabold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                        <span>🚜</span>
-                        <span>Sell Your Plants</span>
-                    </button>
-
-                    <!-- Cart Drawer Trigger Button -->
+                    <!-- Cart Drawer Trigger Button: Borderless Merged Pill -->
                     @php
                         $cart = session()->get('cart', []);
                         $cartCount = array_sum(array_column($cart, 'quantity'));
@@ -169,12 +165,12 @@
                         foreach($cart as $item) { $cartSubtotal += $item['price_pkr'] * $item['quantity']; }
                     @endphp
                     <button onclick="toggleCartDrawer()" 
-                            class="relative flex items-center gap-2.5 bg-botanical-100 hover:bg-botanical-200 text-botanical-900 px-4 py-3 rounded-2xl transition-all border border-botanical-200 group">
+                            class="relative flex items-center gap-2.5 bg-emerald-50 hover:bg-emerald-100/80 text-botanical-900 px-4 py-3 rounded-full transition-all group shadow-sm">
                         <div class="relative">
                             <svg class="w-6 h-6 text-botanical-700 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                             </svg>
-                            <span id="cart-badge" class="absolute -top-2 -right-2.5 bg-gradient-to-r from-red-500 to-carrot-500 text-white text-xs font-black w-5 h-5 flex items-center justify-center rounded-full border-2 border-white shadow">
+                            <span id="cart-badge" class="absolute -top-2 -right-2.5 bg-carrot-500 text-white text-xs font-black w-5 h-5 flex items-center justify-center rounded-full shadow">
                                 {{ $cartCount }}
                             </span>
                         </div>
@@ -198,16 +194,6 @@
                     <span class="font-extrabold text-sm sm:text-base">{{ session('success') }}</span>
                 </div>
                 <button onclick="this.parentElement.remove()" class="text-white hover:text-botanical-100 font-black text-xl">✕</button>
-            </div>
-        @endif
-
-        @if(session('seller_success'))
-            <div class="bg-gradient-to-r from-amber-500 to-carrot-600 text-white px-5 py-3.5 rounded-2xl shadow-lg flex items-center justify-between mb-4">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">🎉</span>
-                    <span class="font-extrabold text-sm sm:text-base">{{ session('seller_success') }}</span>
-                </div>
-                <button onclick="this.parentElement.remove()" class="text-white hover:text-amber-100 font-black text-xl">✕</button>
             </div>
         @endif
 
@@ -249,8 +235,8 @@
         <div id="drawer-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
             @if(count($cart) > 0)
                 @foreach($cart as $id => $item)
-                    <div id="cart-item-{{ $id }}" class="flex items-center gap-4 bg-botanical-50/70 p-3.5 rounded-2xl border border-botanical-200">
-                        <img referrerpolicy="no-referrer" src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}" class="w-16 h-16 rounded-xl object-cover border-2 border-botanical-300">
+                    <div id="cart-item-{{ $id }}" class="flex items-center gap-4 bg-emerald-50/60 p-3.5 rounded-2xl">
+                        <img referrerpolicy="no-referrer" src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}" class="w-16 h-16 rounded-xl object-cover shadow-sm">
                         <div class="flex-1">
                             <h3 class="font-extrabold text-botanical-950 text-sm leading-tight line-clamp-1">{{ $item['name'] }}</h3>
                             <p class="text-xs font-bold text-botanical-600">{{ $item['urdu_name'] ?? 'سبزی پودا' }}</p>
@@ -259,7 +245,7 @@
                                 <span class="font-black text-botanical-900 text-sm">₨ {{ number_format($item['price_pkr']) }} PKR</span>
                                 
                                 <!-- Quantity Controls -->
-                                <div class="flex items-center bg-white rounded-lg border border-botanical-300 shadow-sm">
+                                <div class="flex items-center bg-white rounded-lg shadow-sm">
                                     <button onclick="updateCartQty({{ $id }}, {{ $item['quantity'] - 1 }})" class="px-2 py-0.5 text-botanical-700 hover:bg-botanical-100 font-black">-</button>
                                     <span class="px-2.5 py-0.5 text-xs font-black">{{ $item['quantity'] }}</span>
                                     <button onclick="updateCartQty({{ $id }}, {{ $item['quantity'] + 1 }})" class="px-2 py-0.5 text-botanical-700 hover:bg-botanical-100 font-black">+</button>
@@ -307,7 +293,7 @@
 
     <!-- Quick View Plant Modal -->
     <div id="quick-view-modal" class="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-4 border-botanical-200 relative p-6 sm:p-8">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 sm:p-8">
             <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 bg-gray-100 p-2 rounded-full">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -317,87 +303,22 @@
         </div>
     </div>
 
-    <!-- Seller Listing Modal -->
-    <div id="seller-modal" class="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full shadow-2xl border-4 border-carrot-200 p-6 sm:p-8 relative">
-            <button onclick="closeSellerModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 bg-gray-100 p-2 rounded-full">✕</button>
-            
-            <div class="flex items-center gap-3 mb-4">
-                <span class="text-3xl">🚜</span>
-                <div>
-                    <h3 class="text-xl font-black text-botanical-950">Sell on Hari Sabzi</h3>
-                    <p class="text-xs font-bold text-botanical-600">List your kitchen garden vegetable saplings & plants</p>
-                </div>
-            </div>
-
-            <form action="{{ route('seller.store') }}" method="POST" class="space-y-4">
-                @csrf
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">Your Full Name *</label>
-                        <input type="text" name="seller_name" required placeholder="e.g. Tariq Mehmood" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm focus:ring-2 focus:ring-carrot-400 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">WhatsApp / Phone *</label>
-                        <input type="text" name="seller_phone" required placeholder="0300-1234567" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm focus:ring-2 focus:ring-carrot-400 focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">City / Town *</label>
-                        <input type="text" name="seller_city" required placeholder="e.g. Lahore / Pattoki" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm focus:ring-2 focus:ring-carrot-400 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">Nursery / Garden Name</label>
-                        <input type="text" name="nursery_or_farm_name" placeholder="e.g. Model Town Organics" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm focus:ring-2 focus:ring-carrot-400 focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">Plant Category *</label>
-                        <select name="plant_type" required class="w-full px-3 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm bg-white">
-                            <option value="Root Vegetable (Carrot/Mooli)">Root Vegetable (Carrot/Mooli)</option>
-                            <option value="Kitchen Herb (Mint/Dhania)">Kitchen Herb (Mint/Dhania)</option>
-                            <option value="Fruiting Veggie (Tomato/Mirch)">Fruiting Veggie (Tomato/Mirch)</option>
-                            <option value="Leafy Green (Palak/Salad)">Leafy Green (Palak/Salad)</option>
-                            <option value="Fruit/Citrus Sapling">Fruit/Citrus Sapling</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">Variety Name *</label>
-                        <input type="text" name="variety_name" required placeholder="e.g. Desi Gajar Pot" class="w-full px-3 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-botanical-800 mb-1">Price (PKR) *</label>
-                        <input type="number" name="proposed_price_pkr" required placeholder="₨ PKR" class="w-full px-3 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-botanical-800 mb-1">Quantity Available & Details *</label>
-                    <textarea name="details" required rows="3" placeholder="Pot size, age of saplings, care instructions..." class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-300 font-bold text-sm"></textarea>
-                    <input type="hidden" name="quantity_available" value="20">
-                </div>
-
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-carrot-500 to-amber-500 hover:from-carrot-600 hover:to-amber-600 text-white font-black rounded-2xl shadow-lg transition-transform transform hover:-translate-y-0.5">
-                    Submit Plant Listing Application
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Main Footer with BIGGER LOGO & Botanical Trust -->
-    <footer class="bg-gradient-to-b from-botanical-950 to-[#02180b] text-white pt-16 pb-8 border-t-8 border-botanical-500 mt-20">
+    <!-- Main Footer with ROUND LOGO & Merged Botanical Aesthetic -->
+    <footer class="bg-gradient-to-b from-botanical-950 via-[#0a2315] to-[#04120a] text-white pt-16 pb-10 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 
-                <!-- Col 1: Big Logo & Mission -->
+                <!-- Col 1: Big Round Logo & Mission -->
                 <div class="space-y-4 md:col-span-1">
-                    <div class="flex items-center gap-3">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-botanical-500 to-emeraldGlow flex items-center justify-center shadow-lg ring-2 ring-botanical-400">
-                            <span class="text-3xl">🥕</span>
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 via-botanical-700 to-botanical-950 flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8 text-emerald-200" viewBox="0 0 36 36" fill="none">
+                                <circle cx="18" cy="18" r="15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
+                                <path d="M9 25.5C13 23 23 23 27 25.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M18 25V13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                                <path d="M18 19C13.5 18 10 13 12 9C16 10 18 14.5 18 19Z" fill="currentColor"/>
+                                <path d="M18 16C22.5 15 25.5 10 24 6C20 7 18 11.5 18 16Z" fill="#86efac"/>
+                            </svg>
                         </div>
                         <div>
                             <span class="text-2xl font-black tracking-tight text-white">HARI <span class="text-emeraldGlow">SABZI</span></span>
@@ -407,7 +328,7 @@
                     <p class="text-sm font-bold text-botanical-300 leading-relaxed">
                         Pakistan's premier specialized marketplace for live vegetation grocery plants, root crops, carrot saplings, kitchen herbs, and container fruits.
                     </p>
-                    <div class="flex items-center gap-2 text-xs font-bold text-emeraldGlow bg-botanical-900/80 p-2.5 rounded-xl border border-botanical-700/50">
+                    <div class="flex items-center gap-2 text-xs font-bold text-emeraldGlow bg-white/5 p-3 rounded-2xl">
                         <span>🛡️</span>
                         <span>100% Organically Grown • Potted Delivery Guarantee</span>
                     </div>
@@ -415,7 +336,7 @@
 
                 <!-- Col 2: Popular Grocery Plants -->
                 <div>
-                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 border-b-2 border-botanical-600 pb-1.5 inline-block">Popular Grocery Plants</h3>
+                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 pb-1 inline-block text-emeraldGlow">Popular Grocery Plants</h3>
                     <ul class="space-y-2.5 text-sm font-bold text-botanical-200">
                         <li><a href="{{ route('marketplace.index', ['category' => 'root-vegetables']) }}" class="hover:text-emeraldGlow transition-colors flex items-center gap-2">🥕 Sweet Orange Carrot Plants</a></li>
                         <li><a href="{{ route('marketplace.index', ['category' => 'kitchen-herbs']) }}" class="hover:text-emeraldGlow transition-colors flex items-center gap-2">🌿 Desi Fragrant Podina / Mint</a></li>
@@ -427,32 +348,32 @@
 
                 <!-- Col 3: Delivery Hubs in Pakistan -->
                 <div>
-                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 border-b-2 border-botanical-600 pb-1.5 inline-block">Active Delivery Hubs</h3>
+                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 pb-1 inline-block text-emeraldGlow">Active Delivery Hubs</h3>
                     <p class="text-xs font-bold text-botanical-400 mb-3">Live nursery plants transported in shock-resistant climate-controlled crates:</p>
                     <ul class="grid grid-cols-2 gap-2 text-xs font-bold text-botanical-200">
-                        <li class="bg-botanical-900/60 p-2 rounded-lg border border-botanical-800">🏡 Lahore (Model Town, Johar Town, Gulberg, DHA)</li>
-                        <li class="bg-botanical-900/60 p-2 rounded-lg border border-botanical-800">🏡 Islamabad & Rawalpindi</li>
-                        <li class="bg-botanical-900/60 p-2 rounded-lg border border-botanical-800">🏡 Karachi Central & South</li>
-                        <li class="bg-botanical-900/60 p-2 rounded-lg border border-botanical-800">🏡 Faisalabad & Multan</li>
+                        <li class="bg-white/5 p-2.5 rounded-2xl">🏡 Lahore (Model Town, Johar Town, Gulberg, DHA)</li>
+                        <li class="bg-white/5 p-2.5 rounded-2xl">🏡 Islamabad & Rawalpindi</li>
+                        <li class="bg-white/5 p-2.5 rounded-2xl">🏡 Karachi Central & South</li>
+                        <li class="bg-white/5 p-2.5 rounded-2xl">🏡 Faisalabad & Multan</li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Payment & Security in PKR -->
                 <div>
-                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 border-b-2 border-botanical-600 pb-1.5 inline-block">Secure Payment (PKR)</h3>
+                    <h3 class="text-base font-black text-white uppercase tracking-wider mb-4 pb-1 inline-block text-emeraldGlow">Secure Payment (PKR)</h3>
                     <p class="text-xs font-bold text-botanical-300 mb-3">
                         Pay conveniently upon doorstep delivery anywhere in Pakistan:
                     </p>
                     <div class="space-y-2 text-xs font-bold">
-                        <div class="flex items-center gap-2 bg-botanical-900 p-2 rounded-xl text-emeraldGlow border border-botanical-700">
+                        <div class="flex items-center gap-2 bg-white/5 p-2.5 rounded-2xl text-emeraldGlow">
                             <span>💵</span>
                             <span>Cash on Delivery (COD) across Pakistan</span>
                         </div>
-                        <div class="flex items-center gap-2 bg-botanical-900 p-2 rounded-xl text-yellow-300 border border-botanical-700">
+                        <div class="flex items-center gap-2 bg-white/5 p-2.5 rounded-2xl text-yellow-300">
                             <span>📱</span>
                             <span>JazzCash & EasyPaisa Direct Transfer</span>
                         </div>
-                        <div class="flex items-center gap-2 bg-botanical-900 p-2 rounded-xl text-blue-300 border border-botanical-700">
+                        <div class="flex items-center gap-2 bg-white/5 p-2.5 rounded-2xl text-emerald-300">
                             <span>🏦</span>
                             <span>HBL / Meezan Bank Online Transfer</span>
                         </div>
@@ -462,12 +383,12 @@
             </div>
 
             <!-- Bottom Copyright -->
-            <div class="border-t border-botanical-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-bold text-botanical-400 gap-4">
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-bold text-botanical-400 gap-4">
                 <p>© {{ date('Y') }} Hari Sabzi (Pvt.) Ltd. All rights reserved. Prices strictly in Pakistani Rupees (PKR).</p>
                 <div class="flex items-center space-x-6 text-botanical-300">
-                    <span class="hover:text-white cursor-pointer">100% Human-Curated Organic Horticulture</span>
+                    <span class="hover:text-white cursor-pointer">100% Organically Grown Horticulture</span>
                     <span>•</span>
-                    <span class="hover:text-white cursor-pointer">Laravel & PHP Modern Architecture</span>
+                    <span class="hover:text-white cursor-pointer">Live Potted Groceries Delivered Nationwide</span>
                 </div>
             </div>
         </div>
@@ -491,13 +412,6 @@
             }
         }
 
-        function openSellerModal() {
-            document.getElementById('seller-modal').classList.remove('hidden');
-        }
-        function closeSellerModal() {
-            document.getElementById('seller-modal').classList.add('hidden');
-        }
-
         function openQuickView(plantId) {
             const modal = document.getElementById('quick-view-modal');
             const content = document.getElementById('quick-view-content');
@@ -514,9 +428,9 @@
                 .then(data => {
                     content.innerHTML = `
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                            <img referrerpolicy="no-referrer" src="${data.image_url}" alt="${data.name}" class="w-full h-72 rounded-2xl object-cover border-4 border-botanical-100 shadow-md">
+                            <img referrerpolicy="no-referrer" src="${data.image_url}" alt="${data.name}" class="w-full h-72 sm:h-80 rounded-2xl object-cover shadow-lg">
                             <div>
-                                <span class="bg-botanical-100 text-botanical-800 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">${data.category}</span>
+                                <span class="bg-botanical-100 text-botanical-900 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">${data.category}</span>
                                 <h3 class="text-2xl font-black text-botanical-950 mt-2">${data.name}</h3>
                                 <p class="text-sm font-extrabold text-botanical-600 mb-1">${data.urdu_name || ''}</p>
                                 <p class="text-xs italic text-gray-500 mb-3">${data.scientific_name || ''}</p>

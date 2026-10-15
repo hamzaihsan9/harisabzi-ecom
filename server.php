@@ -4,7 +4,27 @@ $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? ''
 );
 
-if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
+$publicFile = __DIR__.'/public'.$uri;
+
+if ($uri !== '/' && is_file($publicFile)) {
+    $extension = strtolower(pathinfo($publicFile, PATHINFO_EXTENSION));
+    $mimes = [
+        'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'png' => 'image/png',
+        'gif' => 'image/gif',
+        'svg' => 'image/svg+xml',
+        'webp' => 'image/webp',
+        'css' => 'text/css',
+        'js' => 'application/javascript',
+        'ico' => 'image/x-icon',
+    ];
+    if (isset($mimes[$extension])) {
+        header('Content-Type: '.$mimes[$extension]);
+        header('Content-Length: '.filesize($publicFile));
+        readfile($publicFile);
+        exit;
+    }
     return false;
 }
 
