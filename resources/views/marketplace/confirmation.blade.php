@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Order Confirmed #' . $order->order_number . ' — GreenHarvest Plant Marketplace')
+@section('title', 'Order Confirmed #' . $order->order_number . ' — Hari Sabzi Plant Marketplace')
 
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout — GreenHarvest Plant Marketplace')
+@section('title', 'Checkout — Hari Sabzi Plant Marketplace')
 
 @section('content')
 

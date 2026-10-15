@@ -50,7 +50,7 @@ class OrderController extends Controller
         $shipping = 200;
         $total = $subtotal + $shipping;
 
-        $orderNumber = 'GH-' . strtoupper(Str::random(3)) . '-' . mt_rand(1000, 9999);
+        $orderNumber = 'HS-' . strtoupper(Str::random(3)) . '-' . mt_rand(1000, 9999);
 
         $order = Order::create([
             'order_number' => $orderNumber,

@@ -1,4 +1,4 @@
-# 🌿 HariSabzi E-Commerce (GreenHarvest Bazaar — سبزی پودھ مارکیٹ)
+# 🌿 Hari Sabzi (ہری سبزی مارکیٹ) — Plant & Vegetation Marketplace
 
 > **A vibrant, stylish e-commerce marketplace built strictly with Laravel 11 & PHP for buying living vegetation and grocery plants (carrot plants, kitchen herbs, fruiting vegetables, and root crops).**
 
@@ -24,7 +24,7 @@
 - **Quick-View Modal**: Instant previews of plant specifications and photos without leaving the catalog.
 - **Slide-Out Drawer Cart**: Session-backed interactive basket with dynamic counter badges, item quantity controls, and subtotal calculation.
 - **Pakistani Multi-Step Checkout**: Province, city, shipping address, delivery instructions, and payment method selector.
-- **Order Invoice & Live Tracker**: Immediate receipt generation with unique tracking IDs (`GH-XXXX-XXXX`) and nursery packaging stage tracker.
+- **Order Invoice & Live Tracker**: Immediate receipt generation with unique tracking IDs (`HS-XXXX-XXXX`) and nursery packaging stage tracker.
 - **Community Grower Onboarding**: Interactive seller registration modal for local nursery partners to list home-grown seedlings.
 
 ---

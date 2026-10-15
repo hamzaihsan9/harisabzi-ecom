@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $plant->name . ' — Buy Potted Plant in Pakistan | GreenHarvest')
+@section('title', $plant->name . ' — Buy Potted Plant in Pakistan | Hari Sabzi')
 
 @section('content')
 

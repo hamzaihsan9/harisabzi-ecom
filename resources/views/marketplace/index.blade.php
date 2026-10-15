@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'GreenHarvest — Buy Carrot Plants, Vegetables & Kitchen Grocery Plants in Pakistan')
+@section('title', 'Hari Sabzi — Buy Carrot Plants, Vegetables & Kitchen Grocery Plants in Pakistan')
 
 @section('content')
 
@@ -405,7 +405,7 @@
             <div class="bg-botanical-50/60 p-6 rounded-3xl border border-botanical-200 shadow-sm space-y-3">
                 <div class="flex text-amber-400 text-sm font-black">★★★★★</div>
                 <p class="text-xs font-bold text-botanical-900 leading-relaxed italic">
-                    "Kadi Patta (curry tree) and Hari Mirch plants are thriving on my Johar Town terrace. Super fresh, zero chemical smell, just pure organic soil and healthy roots. 10/10 recommend GreenHarvest!"
+                    "Kadi Patta (curry tree) and Hari Mirch plants are thriving on my Johar Town terrace. Super fresh, zero chemical smell, just pure organic soil and healthy roots. 10/10 recommend Hari Sabzi!"
                 </p>
                 <div class="flex items-center gap-3 pt-2 border-t border-botanical-200">
                     <div class="w-10 h-10 rounded-full bg-botanical-700 text-white flex items-center justify-center font-black">ZA</div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'GreenHarvest — Organic Plant & Grocery Vegetation Marketplace')</title>
+    <title>@yield('title', 'Hari Sabzi — Organic Living Plant & Grocery Marketplace')</title>
 
     <!-- Cosmic Bold Typography: Fredoka & Outfit Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,12 +130,12 @@
                     <div class="flex flex-col">
                         <div class="flex items-center gap-1.5">
                             <span class="text-2xl sm:text-3xl font-black text-botanical-950 tracking-tight group-hover:text-botanical-700 transition-colors">
-                                GREEN<span class="text-botanical-600">HARVEST</span>
+                                HARI<span class="text-botanical-600"> SABZI</span>
                             </span>
-                            <span class="bg-carrot-500 text-white text-[10px] uppercase font-black px-1.5 py-0.5 rounded-md shadow-sm">Bazaar</span>
+                            <span class="bg-carrot-500 text-white text-[10px] uppercase font-black px-1.5 py-0.5 rounded-md shadow-sm">مارکیٹ</span>
                         </div>
                         <span class="text-xs sm:text-sm font-extrabold text-botanical-600 tracking-wide flex items-center gap-1">
-                            🌱 سبزی پودھ مارکیٹ <span class="text-gray-300">•</span> Potted Grocery & Vegetables
+                            🌱 ہری سبزی • Potted Grocery & Vegetables
                         </span>
                     </div>
                 </a>
@@ -325,7 +325,7 @@
             <div class="flex items-center gap-3 mb-4">
                 <span class="text-3xl">🚜</span>
                 <div>
-                    <h3 class="text-xl font-black text-botanical-950">Sell on GreenHarvest</h3>
+                    <h3 class="text-xl font-black text-botanical-950">Sell on Hari Sabzi</h3>
                     <p class="text-xs font-bold text-botanical-600">List your kitchen garden vegetable saplings & plants</p>
                 </div>
             </div>
@@ -400,8 +400,8 @@
                             <span class="text-3xl">🥕</span>
                         </div>
                         <div>
-                            <span class="text-2xl font-black tracking-tight text-white">GREEN<span class="text-emeraldGlow">HARVEST</span></span>
-                            <p class="text-xs font-bold text-botanical-300">سبزی پودھ بازار • Potted Grocery</p>
+                            <span class="text-2xl font-black tracking-tight text-white">HARI <span class="text-emeraldGlow">SABZI</span></span>
+                            <p class="text-xs font-bold text-botanical-300">ہری سبزی مارکیٹ • Potted Grocery</p>
                         </div>
                     </div>
                     <p class="text-sm font-bold text-botanical-300 leading-relaxed">
@@ -463,7 +463,7 @@
 
             <!-- Bottom Copyright -->
             <div class="border-t border-botanical-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-bold text-botanical-400 gap-4">
-                <p>© {{ date('Y') }} GreenHarvest Bazaar (Pvt.) Ltd. All rights reserved. Prices strictly in Pakistani Rupees (PKR).</p>
+                <p>© {{ date('Y') }} Hari Sabzi (Pvt.) Ltd. All rights reserved. Prices strictly in Pakistani Rupees (PKR).</p>
                 <div class="flex items-center space-x-6 text-botanical-300">
                     <span class="hover:text-white cursor-pointer">100% Human-Curated Organic Horticulture</span>
                     <span>•</span>
